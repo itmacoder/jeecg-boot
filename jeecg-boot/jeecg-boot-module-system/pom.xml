@@ -62,8 +62,15 @@
 		<dependency>
 			<groupId>org.jeecgframework.boot</groupId>
 			<artifactId>jeecg-boot-module-demo</artifactId>
-			<version>3.1.0</version>
+			<version>${jeecgboot.version}</version>
 		</dependency>
+
+		<dependency>
+			<groupId>org.jeecgframework.boot</groupId>
+			<artifactId>jeecg-boot-module-platform</artifactId>
+			<version>${jeecgboot.version}</version>
+		</dependency>
+
 
 	</dependencies>
 

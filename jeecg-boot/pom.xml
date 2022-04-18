@@ -5,7 +5,7 @@
   <version>3.1.0</version>
   <packaging>pom</packaging>
   <name>JEECG BOOT ${project.version}</name>
-  
+
   	<parent>
 	    <groupId>org.springframework.boot</groupId>
 	    <artifactId>spring-boot-starter-parent</artifactId>
@@ -59,7 +59,8 @@
         <module>jeecg-boot-base</module>
         <module>jeecg-boot-module-demo</module>
         <module>jeecg-boot-module-system</module>
-	</modules>
+        <module>jeecg-boot-module-platform</module>
+    </modules>
 
 	<distributionManagement>
 	  	<repository>

@@ -6481,7 +6481,7 @@ GO
 -- ----------------------------
 INSERT INTO [dbo].[onl_cgform_enhance_js] VALUES (N'0b326acbbc8e52c9c9ecdb19342fc3cf', N'show(){
    console.log(''form'',that)
-   //this.form.setFieldsValue({"name":"name值"})  
+   //this.form.setFieldsValue({"name":"name值"})
   that.$nextTick(() => {
            //age是对应表的字段名
             that.form.setFieldsValue({"age":"999"})
@@ -6490,18 +6490,18 @@ INSERT INTO [dbo].[onl_cgform_enhance_js] VALUES (N'0b326acbbc8e52c9c9ecdb19342f
 
 onlChange(){
    return {
-     
+
      sex(){
         let value = event.value
         //alert(''触发控件'',value)
-        
+
          //性别改动，年龄归零
-        if(value!=null && value!=""){   
+        if(value!=null && value!=""){
           let values = {''age'':0}
           that.triggleChangeValues(values)
         }
       }
-     
+
     }
  }
 ', N'form', NULL, N'05a3a30dada7411c9109306aa4117068')
@@ -6516,7 +6516,7 @@ GO
 INSERT INTO [dbo].[onl_cgform_enhance_js] VALUES (N'2cbaf25f1edb620bea2d8de07f8233a1', N'air_china_post_materiel_item_onlChange(){
     return {
         wl_name(){
-           
+
             let id = event.row.id
             let cnum = event.row.num
             let value = event.value
@@ -6526,7 +6526,7 @@ INSERT INTO [dbo].[onl_cgform_enhance_js] VALUES (N'2cbaf25f1edb620bea2d8de07f82
            console.log(''row'',event.row);
            console.log(''cnum'',cnum);
            let otherValues = {''jifen'': nval}
-              
+
                 that.triggleChangeValues(targrt,id,otherValues)
 
         }
@@ -6555,21 +6555,21 @@ GO
 INSERT INTO [dbo].[onl_cgform_enhance_js] VALUES (N'6dd82d8eac166627302230a809233481', N'ces_order_goods_onlChange(){
     return {
         num(){
-           
+
             let id = event.row.id
             let num = event.row.num
             let price = event.row.price
 
             let targrt = event.target
-            
+
             let nval = price*num
             console.log(''row'',event.row);
             console.log(''num'',num);
             console.log(''that'',that);
             let otherValues = {''zong_price'': nval}
-              
+
             that.triggleChangeValues(otherValues,id,targrt)
-   
+
 
         }
     }
@@ -22028,10 +22028,10 @@ GO
 INSERT INTO [dbo].[sys_quartz_job] VALUES (N'5b3d2c087ad41aa755fc4f89697b01e7', N'admin', N'2019-04-11 19:04:21', N'0', N'admin', N'2020-05-02 15:48:48', N'org.jeecg.modules.message.job.SendMsgJob', N'0/50 * * * * ? *', NULL, NULL, N'-1')
 GO
 
-INSERT INTO [dbo].[sys_quartz_job] VALUES (N'a253cdfc811d69fa0efc70d052bc8128', N'admin', N'2019-03-30 12:44:48', N'0', N'admin', N'2020-05-02 15:48:49', N'org.jeecg.modules.quartz.job.SampleJob', N'0/1 * * * * ?', NULL, NULL, N'-1')
+INSERT INTO [dbo].[sys_quartz_job] VALUES (N'a253cdfc811d69fa0efc70d052bc8128', N'admin', N'2019-03-30 12:44:48', N'0', N'admin', N'2020-05-02 15:48:49', N'org.jeecg.modules.quartz.job.job.SampleJob', N'0/1 * * * * ?', NULL, NULL, N'-1')
 GO
 
-INSERT INTO [dbo].[sys_quartz_job] VALUES (N'df26ecacf0f75d219d746750fe84bbee', NULL, NULL, N'0', N'admin', N'2020-05-02 15:40:35', N'org.jeecg.modules.quartz.job.SampleParamJob', N'0/1 * * * * ?', N'scott', N'带参测试 后台将每隔1秒执行输出日志', N'-1')
+INSERT INTO [dbo].[sys_quartz_job] VALUES (N'df26ecacf0f75d219d746750fe84bbee', NULL, NULL, N'0', N'admin', N'2020-05-02 15:40:35', N'org.jeecg.modules.quartz.job.job.SampleParamJob', N'0/1 * * * * ?', N'scott', N'带参测试 后台将每隔1秒执行输出日志', N'-1')
 GO
 
 
@@ -25887,7 +25887,7 @@ GO
 -- Primary Key structure for table QRTZ_CALENDARS
 -- ----------------------------
 ALTER TABLE [dbo].[QRTZ_CALENDARS] ADD CONSTRAINT [PK_QRTZ_CALENDARS] PRIMARY KEY CLUSTERED ([SCHED_NAME], [CALENDAR_NAME])
-WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)  
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
 ON [PRIMARY]
 GO
 
@@ -25896,7 +25896,7 @@ GO
 -- Primary Key structure for table QRTZ_CRON_TRIGGERS
 -- ----------------------------
 ALTER TABLE [dbo].[QRTZ_CRON_TRIGGERS] ADD CONSTRAINT [PK_QRTZ_CRON_TRIGGERS] PRIMARY KEY CLUSTERED ([SCHED_NAME], [TRIGGER_NAME], [TRIGGER_GROUP])
-WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)  
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
 ON [PRIMARY]
 GO
 
@@ -25905,7 +25905,7 @@ GO
 -- Primary Key structure for table QRTZ_FIRED_TRIGGERS
 -- ----------------------------
 ALTER TABLE [dbo].[QRTZ_FIRED_TRIGGERS] ADD CONSTRAINT [PK_QRTZ_FIRED_TRIGGERS] PRIMARY KEY CLUSTERED ([SCHED_NAME], [ENTRY_ID])
-WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)  
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
 ON [PRIMARY]
 GO
 
@@ -25914,7 +25914,7 @@ GO
 -- Primary Key structure for table QRTZ_JOB_DETAILS
 -- ----------------------------
 ALTER TABLE [dbo].[QRTZ_JOB_DETAILS] ADD CONSTRAINT [PK_QRTZ_JOB_DETAILS] PRIMARY KEY CLUSTERED ([SCHED_NAME], [JOB_NAME], [JOB_GROUP])
-WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)  
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
 ON [PRIMARY]
 GO
 
@@ -25923,7 +25923,7 @@ GO
 -- Primary Key structure for table QRTZ_LOCKS
 -- ----------------------------
 ALTER TABLE [dbo].[QRTZ_LOCKS] ADD CONSTRAINT [PK_QRTZ_LOCKS] PRIMARY KEY CLUSTERED ([SCHED_NAME], [LOCK_NAME])
-WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)  
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
 ON [PRIMARY]
 GO
 
@@ -25932,7 +25932,7 @@ GO
 -- Primary Key structure for table QRTZ_PAUSED_TRIGGER_GRPS
 -- ----------------------------
 ALTER TABLE [dbo].[QRTZ_PAUSED_TRIGGER_GRPS] ADD CONSTRAINT [PK_QRTZ_PAUSED_TRIGGER_GRPS] PRIMARY KEY CLUSTERED ([SCHED_NAME], [TRIGGER_GROUP])
-WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)  
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
 ON [PRIMARY]
 GO
 
@@ -25941,7 +25941,7 @@ GO
 -- Primary Key structure for table QRTZ_SCHEDULER_STATE
 -- ----------------------------
 ALTER TABLE [dbo].[QRTZ_SCHEDULER_STATE] ADD CONSTRAINT [PK_QRTZ_SCHEDULER_STATE] PRIMARY KEY CLUSTERED ([SCHED_NAME], [INSTANCE_NAME])
-WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)  
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
 ON [PRIMARY]
 GO
 
@@ -25950,7 +25950,7 @@ GO
 -- Primary Key structure for table QRTZ_SIMPLE_TRIGGERS
 -- ----------------------------
 ALTER TABLE [dbo].[QRTZ_SIMPLE_TRIGGERS] ADD CONSTRAINT [PK_QRTZ_SIMPLE_TRIGGERS] PRIMARY KEY CLUSTERED ([SCHED_NAME], [TRIGGER_NAME], [TRIGGER_GROUP])
-WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)  
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
 ON [PRIMARY]
 GO
 
@@ -25959,7 +25959,7 @@ GO
 -- Primary Key structure for table QRTZ_SIMPROP_TRIGGERS
 -- ----------------------------
 ALTER TABLE [dbo].[QRTZ_SIMPROP_TRIGGERS] ADD CONSTRAINT [PK_QRTZ_SIMPROP_TRIGGERS] PRIMARY KEY CLUSTERED ([SCHED_NAME], [TRIGGER_NAME], [TRIGGER_GROUP])
-WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)  
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
 ON [PRIMARY]
 GO
 
@@ -25968,7 +25968,7 @@ GO
 -- Primary Key structure for table QRTZ_TRIGGERS
 -- ----------------------------
 ALTER TABLE [dbo].[QRTZ_TRIGGERS] ADD CONSTRAINT [PK_QRTZ_TRIGGERS] PRIMARY KEY CLUSTERED ([SCHED_NAME], [TRIGGER_NAME], [TRIGGER_GROUP])
-WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)  
+WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON)
 ON [PRIMARY]
 GO
 
