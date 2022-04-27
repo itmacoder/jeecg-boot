@@ -43,7 +43,9 @@
   import { CACHE_INCLUDED_ROUTES } from '@/store/mutation-types'
   import registerApps from "@/qiankun";
 
-  const indexKey = '/dashboard/analysis'
+  const indexKey =  '/isystem/QuartzJobList'
+
+
 
   export default {
     name: 'TabLayout',
@@ -177,7 +179,7 @@
 
       // update-begin-author:sunjianlei date:20200120 for: 动态更改页面标题
       changeTitle(title) {
-        let projectTitle = "xxx平台"
+        let projectTitle = "湖南省核与辐射综合管理平台"
         // 首页特殊处理
         if (this.$route.path === indexKey) {
           document.title = projectTitle

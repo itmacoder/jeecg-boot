@@ -178,7 +178,7 @@ public class SysPermissionController {
 
 //	/**
 //	 * 查询用户拥有的菜单权限和按钮权限（根据用户账号）
-//	 * 
+//	 *
 //	 * @return
 //	 */
 //	@RequestMapping(value = "/queryByUser", method = RequestMethod.GET)
@@ -215,10 +215,10 @@ public class SysPermissionController {
 			List<SysPermission> metaList = sysPermissionService.queryByUser(loginUser.getUsername());
 			//添加首页路由
 			//update-begin-author:taoyan date:20200211 for: TASK #3368 【路由缓存】首页的缓存设置有问题，需要根据后台的路由配置来实现是否缓存
-			if(!PermissionDataUtil.hasIndexPage(metaList)){
-				SysPermission indexMenu = sysPermissionService.list(new LambdaQueryWrapper<SysPermission>().eq(SysPermission::getName,"首页")).get(0);
-				metaList.add(0,indexMenu);
-			}
+//			if(!PermissionDataUtil.hasIndexPage(metaList)){
+//				SysPermission indexMenu = sysPermissionService.list(new LambdaQueryWrapper<SysPermission>().eq(SysPermission::getName,"首页")).get(0);
+//				metaList.add(0,indexMenu);
+//			}
 			//update-end-author:taoyan date:20200211 for: TASK #3368 【路由缓存】首页的缓存设置有问题，需要根据后台的路由配置来实现是否缓存
 
 			//update-begin--Author:liusq  Date:20210624  for:自定义首页地址LOWCOD-1578
@@ -254,7 +254,7 @@ public class SysPermissionController {
 			json.put("sysSafeMode", jeeccgBaseConfig.getSafeMode());
 			result.setResult(json);
 		} catch (Exception e) {
-			result.error500("查询失败:" + e.getMessage());  
+			result.error500("查询失败:" + e.getMessage());
 			log.error(e.getMessage(), e);
 		}
 		return result;

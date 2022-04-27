@@ -12,6 +12,7 @@ import java.util.List;
 public enum RoleIndexConfigEnum {
 
     ADMIN("admin", "dashboard/Analysis"),
+//    ADMIN("admin", "system/QuartzJobList"),
     //TEST("test",  "dashboard/IndexChart"),
     HR("hr", "dashboard/IndexBdc");
     //DM("dm", "dashboard/IndexTask"),
